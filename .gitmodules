@@ -1,0 +1,6 @@
+[submodule "magento-mirror"]
+	path = magento-mirror
+	url = git@github.com:ontek/magento-mirror.git
+[submodule "vagrant-lamp"]
+	path = vagrant-lamp
+	url = git@github.com:ontek/vagrant-lamp.git
