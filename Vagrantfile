@@ -14,11 +14,23 @@ Vagrant::Config.run do |config|
   config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
 
   # These ports are used to avoid conflicts with local services.
-  config.vm.forward_port 80, 2080
+  config.vm.forward_port 80, 4080
   config.vm.forward_port 3306, 23306
+
+  config.vm.network :hostonly, "192.168.50.11"
 
   # This is to ensure Magento can write it's generated data to our media and var directories.
   config.vm.share_folder("v-root", "/vagrant", ".", :extra => 'dmode=777,fmode=777')
+
+  config.vm.customize [
+    "setextradata", :id,
+    "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1",
+  ]
+
+  config.vm.customize [
+    "modifyvm", :id,
+    "--memory", "1024",
+  ]
 
   config.vm.provision :chef_solo do |chef|
     chef.roles_path = 'vagrant-lamp/chef/roles'

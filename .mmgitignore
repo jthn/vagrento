@@ -1,0 +1,14 @@
+# Local changes to remove modules
+.modman
+tests
+app/code/community/
+app/design/adminhtml/base/
+app/design/adminhtml/default/default/layout/bmbleb.xml
+app/design/adminhtml/default/default/template/bmbleb
+app/etc/modules/MageTest.xml
+app/etc/modules/Springbot.xml
+lib/MageTest
+skin/adminhtml/base/
+skin/adminhtml/default/default/bmbleb
+magentleman
+shell
